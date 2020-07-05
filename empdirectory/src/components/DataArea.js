@@ -56,14 +56,17 @@ export default class DataArea extends Component {
   }
 
   handleSearchChange = event => {
+    
     console.log(event.target.value);
     const filter = event.target.value;
     const filteredList = this.state.users.filter(item => {
+      
       let values = item.name.first.toLowerCase();
       return values.indexOf(filter.toLowerCase()) !== -1;
       // merge data together, then see if user input is anywhere inside
 
     });
+    event.preventDefault();
     this.setState({ filteredUsers: filteredList });
   }
 
@@ -77,6 +80,7 @@ export default class DataArea extends Component {
   }
 
   render() {
+    
     return (
       <>
         <Nav handleSearchChange={this.handleSearchChange} />
