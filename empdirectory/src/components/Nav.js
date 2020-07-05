@@ -18,7 +18,7 @@ function Nav({ handleSearchChange }) {
       </button>
       <div className="collapse navbar-collapse row" id="navbarNav">
         <div className="search-area col-4">
-          <SearchBox />
+          <SearchBox handleSearchChange={handleSearchChange}/>
         </div>
       </div>
     </nav>

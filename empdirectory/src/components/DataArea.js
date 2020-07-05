@@ -6,6 +6,7 @@ import "../styles/DataArea.css";
 
 
 export default class DataArea extends Component {
+  
   state = {
     users: [{}],
     order: "descend",
@@ -68,7 +69,10 @@ export default class DataArea extends Component {
 
   componentDidMount() {
     API.getUsers().then(results => {
-
+      this.setState({
+        users: results.data.results,
+        filteredUsers: results.data.results
+      })
     });
   }
 
